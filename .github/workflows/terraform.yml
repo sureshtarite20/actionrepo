@@ -97,7 +97,7 @@ jobs:
       uses: hashicorp/terraform-github-actions@master
       with:
         tf_actions_version: 0.14.8
-        tf_actions_subcommand: 'plan'
+        tf_actions_subcommand: 'plan -out=output'
         tf_actions_working_dir: './Terraform-Infra'
 
 
