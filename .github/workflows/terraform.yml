@@ -86,20 +86,20 @@ jobs:
         tf_actions_subcommand: 'init'
         tf_actions_working_dir: './Terraform-Infra'
     
-    # - name: 'Terraform Validate'
-    #   uses: hashicorp/terraform-github-actions@master
-    #   with:
-    #     tf_actions_version: 0.14.8
-    #     tf_actions_subcommand: 'validate'
-    #     tf_actions_working_dir: './Terraform-Infra'
+    - name: 'Terraform Validate'
+      uses: hashicorp/terraform-github-actions@master
+      with:
+        tf_actions_version: 0.14.8
+        tf_actions_subcommand: 'validate'
+        tf_actions_working_dir: './Terraform-Infra'
 
-    # - name: 'Terraform Plan'
-    #   uses: hashicorp/terraform-github-actions@master
-    #   with:
-    #     tf_actions_version: 0.14.8
-    #     tf_actions_subcommand: 'plan'
-    #     tf_actions_working_dir: './Terraform-Infra'
-    # cccc
+    - name: 'Terraform Plan'
+      uses: hashicorp/terraform-github-actions@master
+      with:
+        tf_actions_version: 0.14.8
+        tf_actions_subcommand: 'plan'
+        tf_actions_working_dir: './Terraform-Infra'
+    
 
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
     # - name: Setup Terraform
