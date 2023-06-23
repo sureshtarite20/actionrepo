@@ -97,7 +97,8 @@ jobs:
       uses: hashicorp/terraform-github-actions@master
       with:
         tf_actions_version: 0.14.8
-        tf_actions_subcommand: 'plan -out=output'
+        tf_actions_subcommand: 'plan'
+        args: '-out=plan.tfplan'
         tf_actions_working_dir: './Terraform-Infra'
 
 
@@ -108,6 +109,7 @@ jobs:
       with:
         tf_actions_version: 0.14.8
         tf_actions_subcommand: 'apply -auto-approve'
+        args: '-out=plan.tfplan'
         tf_actions_working_dir: './Terraform-Infra'
      #run: terraform apply -auto-approve -input=false 
 
