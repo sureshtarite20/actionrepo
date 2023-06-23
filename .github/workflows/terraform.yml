@@ -100,6 +100,7 @@ jobs:
         tf_actions_subcommand: 'plan'
         tf_actions_working_dir: './Terraform-Infra'
 
+
     - name: Terraform Apply
       #if: github.ref == 'refs/heads/"main"' && github.event_name == 'push'
       if: github.ref == 'refs/heads/"main"'
