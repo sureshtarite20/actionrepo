@@ -105,7 +105,7 @@ jobs:
     - name: Terraform Apply
       if: github.ref == 'refs/heads/"main"' && github.event_name == 'push'
     #   #if: github.ref == 'refs/heads/"main"'
-      run: terraform apply "plan.tfplan"
+      run: terraform apply "plan.tfplan" --auto-approve
       # uses: hashicorp/terraform-github-actions@master
       # with:
       #   tf_actions_version: 0.14.8
