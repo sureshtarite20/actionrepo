@@ -9,22 +9,22 @@ terraform {
 
 # Configure the Microsoft Azure Provider
 provider "azurerm" {
-  features {}  
+  features {}
 }
 
 terraform {
   backend "azurerm" {
-    resource_group_name = "TerraformGh-RG"
+    resource_group_name  = "TerraformGh-RG"
     storage_account_name = "terraformghpoc"
     container_name       = "tfstategh"
-    key                  = "dev.terraform.tfstate" 
+    key                  = "dev.terraform.tfstate"
   }
 }
 
 
 resource "azurerm_resource_group" "rg" {
-  name     = "${var.rgname}"
-  location = "${var.rglocation}"
+  name     = var.rgname
+  location = var.rglocation
 }
 
 # resource "azurerm_virtual_network" "vnet1" {
@@ -80,13 +80,13 @@ resource "azurerm_network_interface" "nic1" {
 }
 
 resource "azurerm_windows_virtual_machine" "main" {
-  name                            = "${var.prefix}-vmt01"
-  resource_group_name             = azurerm_resource_group.rg.name
-  location                        = azurerm_resource_group.rg.location
-  size                            = "Standard_B1s"
-  admin_username                  = "adminuser"
-  admin_password                  = "P@ssw0rd1234!"
-  network_interface_ids = [ azurerm_network_interface.nic1.id ]
+  name                  = "${var.prefix}-vmt01"
+  resource_group_name   = azurerm_resource_group.rg.name
+  location              = azurerm_resource_group.rg.location
+  size                  = "Standard_B1s"
+  admin_username        = "adminuser"
+  admin_password        = "P@ssw0rd1234!"
+  network_interface_ids = [azurerm_network_interface.nic1.id]
 
   source_image_reference {
     publisher = "MicrosoftWindowsServer"
