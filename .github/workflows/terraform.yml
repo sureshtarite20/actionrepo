@@ -76,6 +76,6 @@ jobs:
       working-directory: ${{env.ROOT_PATH}}
    
     # Generates an execution plan for Terraform
-    - name: Terraform destroy
+    - name: Terraform  destroy
       run: terraform destroy --auto-approve
       working-directory: ${{env.ROOT_PATH}}
