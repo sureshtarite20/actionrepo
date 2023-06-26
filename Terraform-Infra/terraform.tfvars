@@ -1,4 +1,4 @@
-rgname     = "Terraform-GH2"
+rgname     = "wagmans-infra-GH123"
 rglocation = "eastus"
 prefix = "tfdemo"
 vnet_cidr_prefix = "10.10.0.0/16"
